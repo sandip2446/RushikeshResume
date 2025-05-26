@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikesh Dokhale | Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .floating-vertical-nav {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 12px 8px;
+            z-index: 1000;
+        }
+
+        .floating-vertical-nav a {
+            color: #333;
+            font-size: 1.4em;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.2s, color 0.2s;
+            text-align: center;
+        }
+
+        .floating-vertical-nav a:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #0056b3;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 60px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .resume-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .resume-section {
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .resume-section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 0 5px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            align-items: baseline;
+        }
+
+        .experience-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .experience-header .date {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .company {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .experience-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .experience-content li {
+            margin-bottom: 8px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .education-details {
+            margin-bottom: 25px;
+        }
+
+        .education-details h3 {
+            margin: 0 0 8px 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .education-details p {
+            margin: 0 0 5px 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #f5f5f5;
+            padding: 5px 15px;
+            border-radius: 15px;
+            color: #333;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .floating-vertical-nav,
+            .floating-icon-nav,
+            .floating-bottom-bar {
+                display: none !important;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 40px;
+                max-width: none;
+            }
+
+            .resume-header {
+                margin-bottom: 20px;
+            }
+
+            .resume-section {
+                margin-bottom: 20px;
+            }
+
+            .resume-section+.resume-section {
+                margin-top: 10px;
+            }
+
+            .experience-item {
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+
+            @page {
+                margin: 1.5cm;
+            }
+
+            title {
+                display: none;
+            }
+        }
+
+        .floating-bottom-bar {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+            display: flex;
+            gap: 30px;
+            padding: 12px 32px;
+            z-index: 1000;
+        }
+
+        .floating-bottom-bar a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .floating-bottom-bar a:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .floating-icon-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .floating-icon-nav a {
+            background: #fff;
+            color: #333;
+            font-size: 1.5em;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+            transition: background 0.2s, color 0.2s;
+            text-align: center;
+        }
+
+        .floating-icon-nav a:hover {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-icon-nav">
+        <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#" onclick="window.print()" title="Download PDF"><i class="fas fa-download"></i></a>
+    </div>
+
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1>Rushikesh Dokhale</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> St. Catharines, Canada</span>
+                <span><i class="fas fa-phone"></i> +1 905-341-6800</span>
+                <span><i class="fas fa-envelope"></i> rushikeshdokhale@gmail.com</span>
+                <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            <div class="education-details">
+                <h3>Brock University - Goodman School of Business</h3>
+                <p>Bachelor of Business Administration (Concentration in Finance)</p>
+                <p>GPA: 3.6/4.0 | Expected Graduation: April 2025</p>
+                <p><strong>Relevant Courses:</strong> Bloomberg Market Concepts, Canadian Securities Course, Financial
+                    Modelling (A)</p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Research Assistance</h3>
+                    <span class="date">January 2025 - Present</span>
+                </div>
+                <div class="company">Brock University, St. Catharines</div>
+                <div class="experience-content">
+                    <ul>
+                        <li>Analyzed a 10-year dataset (1,000+ monthly observations) of U.S. and Canadian credit spreads
+                            with R/Python, focusing on federal vs. provincial bonds</li>
+                        <li>Developed and tested 4 custom empirical models (e.g. mean–variance) to gauge default risk,
+                            liquidity premiums, market sentiment and risk tolerance, boosting predictive accuracy by 20%
+                        </li>
+                        <li>Produced 8 reports on yield fluctuations and macro correlations for Professor Cyr's policy
+                            recommendations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Sales Executive</h3>
+                    <span class="date">August 2022 - Present</span>
+                </div>
+                <div class="company">Glentel Inc, St. Catharines</div>
+                <div class="experience-content">
+                    <ul>
+                        <li>Achieved 135% activation growth (from C to B volume store) and consistently exceeded sales
+                            targets</li>
+                        <li>Negotiated mobile plans for 228 small businesses & corporate accounts culminating in top
+                            district performance</li>
+                        <li>Recognized for leadership potential & got enrolled in the Future Leader (manager training)
+                            program</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Team Member</h3>
+                    <span class="date">January 2025</span>
+                </div>
+                <div class="company">Goodman Gold Challenge, Sudbury</div>
+                <div class="experience-content">
+                    <ul>
+                        <li>Analyzed PEA/PFS reports and built DCF valuations that yielded a base-case NPV of USD $887M
+                            for OMAI and an implied share price of CAD $0.63—representing a potential 90% upside</li>
+                        <li>Highlighted OMAI's 4.3M-ounce gold resource, predicted potential blue-sky resources using
+                            Monte Carlo, projected 93% recovery rate, and cost advantages (AISC near $1,009/oz) as core
+                            drivers of long-term value</li>
+                        <li>Presented a strong "BUY" with payback period of 4.5 yrs for Dundee Corporation (TSX: DC)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Vice President</h3>
+                    <span class="date">September 2023 - September 2024</span>
+                </div>
+                <div class="company">Brock Finance & Investment Group, St. Catharines</div>
+                <div class="experience-content">
+                    <ul>
+                        <li>Overseeing the day-to-day operations of 3 departments and tracking progress toward annual
+                            goals</li>
+                        <li>Initiated the establishment of a Student Investment Fund ($100K CAD) by collaborating with
+                            dean and alumni</li>
+                        <li>Supervised Analyst Program and created 18 equity research reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>BFIG Stock Pitch Goodman (1st place in 2025)</li>
+                <li>GCC Mining Stock Pitch (Top 5 in 2025)</li>
+                <li>TMU Battle on Bay Stock Pitch (Top 4 in 2024)</li>
+                <li>Athletics Federation of India-Under 20-200M Nationals (Bronze Medalist 2020)</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Additional Information</h2>
+            <p><strong>Languages:</strong> English (fluent), Hindi (fluent), Marathi (native) and French (learning)</p>
+            <p><strong>Interests:</strong> Trading strategies, investments, geopolitics, hiking, cricket, rock skipping
+                & instrumental music</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rushikesh Dokhale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
